@@ -43,9 +43,12 @@ duranta-bench-harness/
 ├── results/                       # Validated JSON result outputs
 ├── schemas/
 │   └── result.schema.json         # Draft 2020-12 JSON Schema
+├── scripts/
+│   └── control_plane_latency.py   # tshark script for F1AP/NGAP/E1AP procedure latency
 └── tests/
-    ├── fixtures/                  # Sample output fixtures for offline test suite
+    ├── fixtures/                  # Output & pcap fixtures for offline test suite
     ├── test_manifest.py           # Pytest suite for manifest collection
+    ├── test_procedure_latency.py  # Pytest suite for control-plane procedure latency
     └── test_schema.py             # Pytest suite for schema validation & parsing
 ```
 
@@ -114,4 +117,23 @@ docker run --rm \
     --schema /harness/schemas/result.schema.json \
     --output /harness/results/dl_40mhz_mcs15.json
 ```
+
+### Step 5: Compute Control-Plane Procedure Latency from PCAPs
+Analyze 3GPP control-plane elementary procedure round-trip latency (F1AP, NGAP, E1AP) from network packet captures (`.pcap` or `.pcapng`) using `tshark`:
+```bash
+docker run --rm \
+  -v $(pwd):/harness \
+  duranta-bench-image \
+  python3 /harness/scripts/control_plane_latency.py /harness/tests/fixtures/sample_f1ap.pcapng
+```
+To export machine-readable JSON or CSV data:
+```bash
+docker run --rm \
+  -v $(pwd):/harness \
+  duranta-bench-image \
+  python3 /harness/scripts/control_plane_latency.py /harness/tests/fixtures/sample_f1ap.pcapng \
+    --json \
+    --csv /harness/results/control_plane_procedures.csv
+```
+
 
