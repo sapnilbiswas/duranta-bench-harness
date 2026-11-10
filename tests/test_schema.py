@@ -103,3 +103,4 @@ def test_schema_invalid_missing_commit(result_schema):
 
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.validate(instance=invalid_doc, schema=result_schema)
+

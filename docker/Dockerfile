@@ -64,3 +64,4 @@ ENV PATH="/opt/asn1c/bin:${PATH}"
 
 WORKDIR /workspace
 CMD ["/bin/bash"]
+

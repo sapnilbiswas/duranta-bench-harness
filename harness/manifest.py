@@ -189,3 +189,4 @@ def collect_platform_manifest(
 if __name__ == "__main__":
     manifest = collect_platform_manifest()
     print(json.dumps(manifest, indent=2))
+

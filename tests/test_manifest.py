@@ -57,3 +57,4 @@ def test_collect_platform_manifest_structure():
         assert key in manifest, f"Missing required manifest key: {key}"
     assert "sysname" in manifest["uname"]
     assert "machine" in manifest["uname"]
+

@@ -6,3 +6,4 @@ PHY proc tx                                  44.86 us (1000 trials)
     |__ DLSCH modulation time                 4.20 us (1000 trials)		(  4.20 total [ms])
     |__ DLSCH scrambling time                 2.30 us (1000 trials)		(  2.30 total [ms])
 SNR 20.00 dB: TX 1000 RX 1000 BLER 0.000000
+

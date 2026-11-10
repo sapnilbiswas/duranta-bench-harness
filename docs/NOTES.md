@@ -69,3 +69,11 @@ This document tracks all assumptions, verified paths and APIs, unverified items,
    - Dynamic frequency scaling and RAM clock adjustment are not documented in OAI repository docs (`doc/`).
    - Hardware frequency stepping requires bare-metal BIOS access or kernel MSR/cpufreq privileges, which are absent in virtualized container testbeds.
    - Status: Proposed in GAP_ANALYSIS as a deliverable requiring dedicated bare-metal testbed automation (e.g. `turbostat`, `dmidecode`, `cpupower frequency-set`).
+
+## Build & Runtime Incidents Observed
+
+1. **Docker Desktop VM Memory Limit under High Concurrency**:
+   - Initial parallel compilation (`ninja -C /build nr_dlsim nr_ulsim` defaulting to `-j 8`) triggered a memory pressure restart of Docker Desktop's Virtualization framework VM (`memoryMiB 8192`) at target 7178/10774, resulting in `error waiting for container: unexpected EOF`.
+   - Resolution: Resumed with `-j 4` concurrency (`ninja -j 4 -C /build nr_dlsim nr_ulsim`). Ninja cleanly resumed from the existing build cache in the mounted build directory without re-compiling the 7,177 previously completed object targets.
+
+

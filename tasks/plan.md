@@ -39,3 +39,4 @@ A lightweight, reproducible benchmarking harness and gap analysis for Duranta-Op
 ### Phase 4 / Final Polish: Documentation & Commit History
 - [ ] Task 4.1: Write plain-language `README.md` covering quickstart, architecture, scope, deliverables, and claims/limitations.
 - [ ] Task 4.2: Verify repository cleanliness, ensure no forbidden modifications or licensing breaches, and commit phases cleanly.
+
