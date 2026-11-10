@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DurantaBenchmarkResult",
+  "version": "1.0.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "timestamp",
+    "virtualized",
+    "virtualization_note",
+    "duranta_commit",
+    "build_flags",
+    "platform_manifest",
+    "benchmark_runs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "virtualized": {
+      "type": "boolean"
+    },
+    "virtualization_note": {
+      "type": "string"
+    },
+    "duranta_commit": {
+      "type": "string"
+    },
+    "build_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "platform_manifest": {
+      "type": "object",
+      "required": [
+        "uname",
+        "cpu_arch",
+        "os_release",
+        "virtualization"
+      ],
+      "properties": {
+        "uname": {
+          "type": "object",
+          "properties": {
+            "sysname": { "type": "string" },
+            "nodename": { "type": "string" },
+            "release": { "type": "string" },
+            "version": { "type": "string" },
+            "machine": { "type": "string" }
+          },
+          "required": ["sysname", "release", "machine"]
+        },
+        "cpu_arch": { "type": "string" },
+        "lscpu": { "type": ["object", "string", "null"] },
+        "os_release": { "type": ["object", "string"] },
+        "kernel_cmdline": { "type": "string" },
+        "cpu_governor": { "type": "string" },
+        "smt_state": { "type": "string" },
+        "turbo_boost": { "type": "string" },
+        "isolated_cpus": { "type": "string" },
+        "memory_info": { "type": ["object", "string"] },
+        "compiler_version": { "type": "string" },
+        "virtualization": { "type": "string" }
+      }
+    },
+    "benchmark_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "benchmark_name",
+          "command",
+          "repetition_index",
+          "exit_code",
+          "status",
+          "metrics"
+        ],
+        "properties": {
+          "benchmark_name": { "type": "string" },
+          "test_case_id": { "type": "string" },
+          "condition": { "type": "string", "enum": ["idle", "loaded", "baseline", "unspecified"] },
+          "command": { "type": "string" },
+          "repetition_index": { "type": "integer", "minimum": 0 },
+          "taskset_cpu_list": { "type": ["string", "null"] },
+          "exit_code": { "type": "integer" },
+          "status": { "type": "string", "enum": ["success", "failed"] },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": { "type": ["number", "null"] }
+          },
+          "raw_stdout": { "type": "string" },
+          "raw_stderr": { "type": "string" }
+        }
+      }
+    },
+    "noise_floor_analysis": {
+      "type": "object",
+      "properties": {
+        "test_case_id": { "type": "string" },
+        "metric_name": { "type": "string" },
+        "idle_stats": {
+          "type": "object",
+          "properties": {
+            "count": { "type": "integer" },
+            "median": { "type": "number" },
+            "iqr": { "type": "number" },
+            "min": { "type": "number" },
+            "max": { "type": "number" },
+            "values": { "type": "array", "items": { "type": "number" } }
+          }
+        },
+        "loaded_stats": {
+          "type": "object",
+          "properties": {
+            "count": { "type": "integer" },
+            "median": { "type": "number" },
+            "iqr": { "type": "number" },
+            "min": { "type": "number" },
+            "max": { "type": "number" },
+            "values": { "type": "array", "items": { "type": "number" } }
+          }
+        },
+        "diff_median": { "type": "number" },
+        "diff_percentage": { "type": "number" }
+      }
+    }
+  }
+}
