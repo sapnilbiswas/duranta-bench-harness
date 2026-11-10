@@ -40,6 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pytest \
     python3-jsonschema \
     python3-yaml \
+    tshark \
     && rm -rf /var/lib/apt/lists/*
 
 # Build and install asn1c (compatible commit 940dd5fa9f3917913fd487b13dfddfacd0ded06e used by OAI)
