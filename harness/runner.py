@@ -16,6 +16,12 @@ import statistics
 import subprocess
 import sys
 from pathlib import Path
+import sys
+from pathlib import Path
+
+# Ensure harness package is in python path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from typing import Any, Dict, List, Optional, Tuple
 
 import jsonschema
@@ -310,7 +316,7 @@ def execute_test_suite(
 def main():
     parser = argparse.ArgumentParser(description="Duranta Benchmark Runner")
     parser.add_argument("--bin", required=True, help="Path to simulator binary (e.g. /build/nr_dlsim)")
-    parser.add_argument("--args", required=True, help="Arguments to pass to binary (quoted string)")
+    parser.add_argument("--args", default="", help="Arguments to pass to binary (quoted string)")
     parser.add_argument("-n", "--repetitions", type=int, default=3, help="Repetitions per condition")
     parser.add_argument("--cpu", default=None, help="Pin simulator to CPU core(s), e.g. '0' or '0,1'")
     parser.add_argument("--noise-floor", action="store_true", help="Run noise floor evaluation (idle vs loaded)")
@@ -320,13 +326,21 @@ def main():
     parser.add_argument("--duranta-path", default="/workspace/openairinterface5g", help="Path to Duranta clone")
     parser.add_argument("--schema", default="schemas/result.schema.json", help="Path to JSON Schema")
     parser.add_argument("-o", "--output", default=None, help="Path to save result JSON")
+    parser.add_argument("sim_args", nargs="*", help="Direct arguments for simulator")
 
-    parsed = parser.parse_args()
+    parsed, unknown = parser.parse_known_args()
 
-    split_args = parsed.args.split()
+    args_to_use = []
+    if parsed.args:
+        args_to_use.extend(parsed.args.strip().split())
+    if parsed.sim_args:
+        args_to_use.extend(parsed.sim_args)
+    if unknown:
+        args_to_use.extend(unknown)
+
     results = execute_test_suite(
         executable_path=parsed.bin,
-        args=split_args,
+        args=args_to_use,
         repetitions=parsed.repetitions,
         cpu_list=parsed.cpu,
         noise_floor=parsed.noise_floor,

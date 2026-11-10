@@ -1,0 +1,679 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-11-10T21:05:15.388142+00:00",
+  "virtualized": true,
+  "virtualization_note": "virtualized, not representative of bare metal",
+  "duranta_commit": "dfb296ab867050a7bde81b393fa31b757ada2c83",
+  "build_flags": [
+    "-DENABLE_PHYSIM_TESTS=ON",
+    "-DSANITIZE_UNDEFINED=OFF",
+    "-DSANITIZE_ADDRESS=OFF"
+  ],
+  "platform_manifest": {
+    "uname": {
+      "sysname": "Linux",
+      "nodename": "fd98cddb5d6f",
+      "release": "7.0.12-linuxkit",
+      "version": "#1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026",
+      "machine": "aarch64"
+    },
+    "cpu_arch": "aarch64",
+    "lscpu": {
+      "lscpu": [
+        {
+          "field": "Architecture:",
+          "data": "aarch64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "64-bit"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "8"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-7"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "Apple"
+        },
+        {
+          "field": "Model name:",
+          "data": "-"
+        },
+        {
+          "field": "Model:",
+          "data": "0"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "1"
+        },
+        {
+          "field": "Core(s) per cluster:",
+          "data": "8"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "-"
+        },
+        {
+          "field": "Cluster(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "0x0"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "48.00"
+        },
+        {
+          "field": "Flags:",
+          "data": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm sb paca pacg dcpodp flagm2 frint i8mm bf16 bti"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Ghostwrite:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Old microcode:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Vulnerable"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; CSV2, but not BHB"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Not affected"
+        }
+      ]
+    },
+    "os_release": {
+      "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+      "NAME": "Ubuntu",
+      "VERSION_ID": "24.04",
+      "VERSION": "24.04.5 LTS (Noble Numbat)",
+      "VERSION_CODENAME": "noble",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "noble",
+      "LOGO": "ubuntu-logo"
+    },
+    "kernel_cmdline": "init=/initd loglevel=1 root=/dev/vdb rootfstype=erofs ro vsyscall=emulate panic=0 eth0.dhcp eth1.dhcp linuxkit.unified_cgroup_hierarchy=1 console=hvc0   virtio_net.disable_csum=1 slub_min_order=2 page_reporting.page_reporting_order=2 vpnkit.connect=connect://2/1999 com.docker.VMID=aea62e06-68b8-4682-aad3-a90598541f5e",
+    "cpu_governor": "not captured",
+    "smt_state": "not captured",
+    "turbo_boost": "not captured",
+    "isolated_cpus": "none",
+    "memory_info": {
+      "MemTotal": "8124776 kB",
+      "MemFree": "3812332 kB",
+      "MemAvailable": "6266168 kB",
+      "Buffers": "72940 kB",
+      "Cached": "2436880 kB",
+      "SwapTotal": "1048572 kB",
+      "SwapFree": "1048572 kB"
+    },
+    "compiler_version": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "virtualization": "docker"
+  },
+  "benchmark_runs": [
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 0,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 80.36,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 44.34,
+        "ldpc_encoding_time_us": 12.63,
+        "dlsch_modulation_time_us": 6.83,
+        "dlsch_scrambling_time_us": 1.2,
+        "dlsch_outer_crc_time_us": 1.83,
+        "dlsch_pdsch_generation_time_us": 29.66,
+        "dlsch_mod_lm_time_us": 6.83,
+        "dlsch_resource_mapping_time_us": 5.95,
+        "dlsch_precoding_time_us": 12.44,
+        "multipath_channel_cpu_us": 124.18,
+        "add_noise_cpu_us": 542.91,
+        "rx_pdsch_stats_us": 148.42,
+        "dlsch_rx_pdcch_stats_us": 48.44,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.83,
+        "dlsch_channel_estimation_stats_us": 50.63,
+        "dlsch_decoding_stats_us": 982.02,
+        "dlsch_ldpc_decoding_stats_us": 77.7,
+        "dlsch_extract_rbs_stats_us": 0.72,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.75,
+        "dlsch_channel_compensation_stats_us": 3.08,
+        "dlsch_llr_stats_us": 0.66,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.71,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 993.13
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 1537037827041488121\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (149/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (9.475478e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  80.36 us (100 trials)\n Statistics std=44.66, min=69.12, q1=71.08, median=72.17, q3=79.46, max=120.08 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 44.34 us (100 trials)\t\t(4434.54 total [ms])\n        |__ LDPC encoding time              12.63 us (200 trials)\n    |__ DLSCH modulation time                6.83 us (100 trials)\t\t(682.75 total [ms])\n    |__ DLSCH scrambling time                1.20 us (100 trials)\t\t(120.21 total [ms])\n        |__ DLSCH Outer CRC time             1.83 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.66 us (100 trials)\t\t(2966.21 total [ms])\n        |__ DLSCH scrambling time            1.20 us (100 trials)\n        |__ DLSCH mod/lm time                6.83 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.95 us (100 trials)\n        |__ DLSCH Precoding time            12.44 us (100 trials)\n|__ Multipath Channel (CPU)                124.18 us (100 trials)\t\t(12418.42 total [ms])\n|__ Add Noise (CPU)                        542.91 us (100 trials)\t\t(54291.38 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         148.42 us (100 trials)\t\t(14841.71 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    48.44 us (100 trials)\t\t(4843.62 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.83 us (1400 trials)\t\t(8167.64 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          50.63 us (100 trials)\t\t(5063.08 total [ms])\n|__ DLSCH_DECODING_STATS                   982.02 us (100 trials)\t\t(98201.75 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               77.70 us (1200 trials)\t\t(93239.60 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.72 us (1300 trials)\t\t(942.77 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(103.92 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 28.13 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.75 us (100 trials)\t\t(975.08 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.08 us (1300 trials)\t\t(4005.43 total [ms])\n|__ DLSCH_LLR_STATS                          0.66 us (1300 trials)\t\t(858.71 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.71 us (1300 trials)\t\t(928.34 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 993.13 us (100 trials)\t\t(99313.42 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 1,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 81.63,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 44.93,
+        "ldpc_encoding_time_us": 12.99,
+        "dlsch_modulation_time_us": 6.68,
+        "dlsch_scrambling_time_us": 1.18,
+        "dlsch_outer_crc_time_us": 1.83,
+        "dlsch_pdsch_generation_time_us": 29.71,
+        "dlsch_mod_lm_time_us": 6.68,
+        "dlsch_resource_mapping_time_us": 5.94,
+        "dlsch_precoding_time_us": 12.7,
+        "multipath_channel_cpu_us": 125.18,
+        "add_noise_cpu_us": 553.91,
+        "rx_pdsch_stats_us": 155.21,
+        "dlsch_rx_pdcch_stats_us": 49.66,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 6.03,
+        "dlsch_channel_estimation_stats_us": 51.09,
+        "dlsch_decoding_stats_us": 1007.15,
+        "dlsch_ldpc_decoding_stats_us": 79.72,
+        "dlsch_extract_rbs_stats_us": 0.76,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.79,
+        "dlsch_channel_compensation_stats_us": 3.18,
+        "dlsch_llr_stats_us": 0.63,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.68,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1018.29
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 679507520032017310\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (153/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (9.729853e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  81.63 us (100 trials)\n Statistics std=36.26, min=69.50, q1=71.29, median=73.08, q3=84.00, max=130.50 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 44.93 us (100 trials)\t\t(4493.20 total [ms])\n        |__ LDPC encoding time              12.99 us (200 trials)\n    |__ DLSCH modulation time                6.68 us (100 trials)\t\t(667.87 total [ms])\n    |__ DLSCH scrambling time                1.18 us (100 trials)\t\t(118.09 total [ms])\n        |__ DLSCH Outer CRC time             1.83 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.71 us (100 trials)\t\t(2970.83 total [ms])\n        |__ DLSCH scrambling time            1.18 us (100 trials)\n        |__ DLSCH mod/lm time                6.68 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.94 us (100 trials)\n        |__ DLSCH Precoding time            12.70 us (100 trials)\n|__ Multipath Channel (CPU)                125.18 us (100 trials)\t\t(12518.37 total [ms])\n|__ Add Noise (CPU)                        553.91 us (100 trials)\t\t(55390.71 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         155.21 us (100 trials)\t\t(15521.33 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    49.66 us (100 trials)\t\t(4966.58 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             6.03 us (1400 trials)\t\t(8436.75 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          51.09 us (100 trials)\t\t(5108.92 total [ms])\n|__ DLSCH_DECODING_STATS                   1007.15 us (100 trials)\t\t(100715.25 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               79.72 us (1200 trials)\t\t(95660.24 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.76 us (1300 trials)\t\t(986.68 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(109.16 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 29.98 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.79 us (100 trials)\t\t(979.54 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.18 us (1300 trials)\t\t(4140.23 total [ms])\n|__ DLSCH_LLR_STATS                          0.63 us (1300 trials)\t\t(816.22 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.68 us (1300 trials)\t\t(883.55 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1018.29 us (100 trials)\t\t(101828.96 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 2,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 78.91,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 43.4,
+        "ldpc_encoding_time_us": 12.59,
+        "dlsch_modulation_time_us": 6.36,
+        "dlsch_scrambling_time_us": 1.12,
+        "dlsch_outer_crc_time_us": 1.79,
+        "dlsch_pdsch_generation_time_us": 29.23,
+        "dlsch_mod_lm_time_us": 6.36,
+        "dlsch_resource_mapping_time_us": 5.85,
+        "dlsch_precoding_time_us": 12.85,
+        "multipath_channel_cpu_us": 124.42,
+        "add_noise_cpu_us": 538.83,
+        "rx_pdsch_stats_us": 145.9,
+        "dlsch_rx_pdcch_stats_us": 45.49,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.87,
+        "dlsch_channel_estimation_stats_us": 50.31,
+        "dlsch_decoding_stats_us": 977.34,
+        "dlsch_ldpc_decoding_stats_us": 77.49,
+        "dlsch_extract_rbs_stats_us": 0.73,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.71,
+        "dlsch_channel_compensation_stats_us": 3.09,
+        "dlsch_llr_stats_us": 0.57,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.62,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 988.3
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 13133855902752340746\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (123/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (7.822039e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  78.91 us (100 trials)\n Statistics std=37.49, min=69.25, q1=71.08, median=71.38, q3=76.88, max=93.29 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 43.40 us (100 trials)\t\t(4340.25 total [ms])\n        |__ LDPC encoding time              12.59 us (200 trials)\n    |__ DLSCH modulation time                6.36 us (100 trials)\t\t(635.97 total [ms])\n    |__ DLSCH scrambling time                1.12 us (100 trials)\t\t(112.29 total [ms])\n        |__ DLSCH Outer CRC time             1.79 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.23 us (100 trials)\t\t(2923.08 total [ms])\n        |__ DLSCH scrambling time            1.12 us (100 trials)\n        |__ DLSCH mod/lm time                6.36 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.85 us (100 trials)\n        |__ DLSCH Precoding time            12.85 us (100 trials)\n|__ Multipath Channel (CPU)                124.42 us (100 trials)\t\t(12441.91 total [ms])\n|__ Add Noise (CPU)                        538.83 us (100 trials)\t\t(53883.12 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         145.90 us (100 trials)\t\t(14590.38 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    45.49 us (100 trials)\t\t(4548.84 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.87 us (1400 trials)\t\t(8220.01 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          50.31 us (100 trials)\t\t(5031.17 total [ms])\n|__ DLSCH_DECODING_STATS                   977.34 us (100 trials)\t\t(97733.54 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               77.49 us (1200 trials)\t\t(92986.55 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.73 us (1300 trials)\t\t(949.76 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(106.38 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 28.17 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.71 us (100 trials)\t\t(971.54 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.09 us (1300 trials)\t\t(4018.59 total [ms])\n|__ DLSCH_LLR_STATS                          0.57 us (1300 trials)\t\t(740.06 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.62 us (1300 trials)\t\t(808.66 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 988.30 us (100 trials)\t\t(98830.00 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 3,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 76.71,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 42.74,
+        "ldpc_encoding_time_us": 12.35,
+        "dlsch_modulation_time_us": 6.26,
+        "dlsch_scrambling_time_us": 1.15,
+        "dlsch_outer_crc_time_us": 1.77,
+        "dlsch_pdsch_generation_time_us": 28.29,
+        "dlsch_mod_lm_time_us": 6.26,
+        "dlsch_resource_mapping_time_us": 5.69,
+        "dlsch_precoding_time_us": 12.21,
+        "multipath_channel_cpu_us": 123.02,
+        "add_noise_cpu_us": 537.72,
+        "rx_pdsch_stats_us": 143.74,
+        "dlsch_rx_pdcch_stats_us": 45.55,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.71,
+        "dlsch_channel_estimation_stats_us": 49.19,
+        "dlsch_decoding_stats_us": 966.52,
+        "dlsch_ldpc_decoding_stats_us": 76.77,
+        "dlsch_extract_rbs_stats_us": 0.73,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.56,
+        "dlsch_channel_compensation_stats_us": 3.08,
+        "dlsch_llr_stats_us": 0.56,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.61,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 977.01
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 3311681408862204312\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (140/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (8.903134e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  76.71 us (100 trials)\n Statistics std=34.33, min=69.50, q1=70.88, median=71.04, q3=73.38, max=87.79 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 42.74 us (100 trials)\t\t(4274.50 total [ms])\n        |__ LDPC encoding time              12.35 us (200 trials)\n    |__ DLSCH modulation time                6.26 us (100 trials)\t\t(625.96 total [ms])\n    |__ DLSCH scrambling time                1.15 us (100 trials)\t\t(114.88 total [ms])\n        |__ DLSCH Outer CRC time             1.77 us (100 trials)\n    |__ DLSCH PDSCH Generation time         28.29 us (100 trials)\t\t(2828.75 total [ms])\n        |__ DLSCH scrambling time            1.15 us (100 trials)\n        |__ DLSCH mod/lm time                6.26 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.69 us (100 trials)\n        |__ DLSCH Precoding time            12.21 us (100 trials)\n|__ Multipath Channel (CPU)                123.02 us (100 trials)\t\t(12301.71 total [ms])\n|__ Add Noise (CPU)                        537.72 us (100 trials)\t\t(53772.38 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         143.74 us (100 trials)\t\t(14373.87 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    45.55 us (100 trials)\t\t(4554.91 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.71 us (1400 trials)\t\t(7994.81 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          49.19 us (100 trials)\t\t(4918.96 total [ms])\n|__ DLSCH_DECODING_STATS                   966.52 us (100 trials)\t\t(96652.09 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               76.77 us (1200 trials)\t\t(92118.87 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.73 us (1300 trials)\t\t(948.03 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(105.45 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 28.92 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.56 us (100 trials)\t\t(956.18 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.08 us (1300 trials)\t\t(4000.03 total [ms])\n|__ DLSCH_LLR_STATS                          0.56 us (1300 trials)\t\t(723.19 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.61 us (1300 trials)\t\t(790.01 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 977.01 us (100 trials)\t\t(97701.08 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 4,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 80.19,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 43.98,
+        "ldpc_encoding_time_us": 12.69,
+        "dlsch_modulation_time_us": 6.71,
+        "dlsch_scrambling_time_us": 1.14,
+        "dlsch_outer_crc_time_us": 1.83,
+        "dlsch_pdsch_generation_time_us": 29.78,
+        "dlsch_mod_lm_time_us": 6.71,
+        "dlsch_resource_mapping_time_us": 5.89,
+        "dlsch_precoding_time_us": 12.94,
+        "multipath_channel_cpu_us": 124.86,
+        "add_noise_cpu_us": 545.59,
+        "rx_pdsch_stats_us": 149.64,
+        "dlsch_rx_pdcch_stats_us": 48.61,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.99,
+        "dlsch_channel_estimation_stats_us": 50.73,
+        "dlsch_decoding_stats_us": 981.48,
+        "dlsch_ldpc_decoding_stats_us": 77.79,
+        "dlsch_extract_rbs_stats_us": 0.73,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.8,
+        "dlsch_channel_compensation_stats_us": 3.19,
+        "dlsch_llr_stats_us": 0.61,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.67,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 992.6
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 12535856121223662674\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (129/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (8.203602e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  80.19 us (100 trials)\n Statistics std=37.18, min=69.42, q1=71.21, median=73.04, q3=80.12, max=108.71 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 43.98 us (100 trials)\t\t(4398.42 total [ms])\n        |__ LDPC encoding time              12.69 us (200 trials)\n    |__ DLSCH modulation time                6.71 us (100 trials)\t\t(670.71 total [ms])\n    |__ DLSCH scrambling time                1.14 us (100 trials)\t\t(113.96 total [ms])\n        |__ DLSCH Outer CRC time             1.83 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.78 us (100 trials)\t\t(2978.30 total [ms])\n        |__ DLSCH scrambling time            1.14 us (100 trials)\n        |__ DLSCH mod/lm time                6.71 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.89 us (100 trials)\n        |__ DLSCH Precoding time            12.94 us (100 trials)\n|__ Multipath Channel (CPU)                124.86 us (100 trials)\t\t(12486.58 total [ms])\n|__ Add Noise (CPU)                        545.59 us (100 trials)\t\t(54559.21 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         149.64 us (100 trials)\t\t(14964.38 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    48.61 us (100 trials)\t\t(4860.87 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.99 us (1400 trials)\t\t(8379.27 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          50.73 us (100 trials)\t\t(5073.54 total [ms])\n|__ DLSCH_DECODING_STATS                   981.48 us (100 trials)\t\t(98147.80 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               77.79 us (1200 trials)\t\t(93345.74 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.73 us (1300 trials)\t\t(955.26 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(105.96 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 27.54 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.80 us (100 trials)\t\t(980.13 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.19 us (1300 trials)\t\t(4149.42 total [ms])\n|__ DLSCH_LLR_STATS                          0.61 us (1300 trials)\t\t(798.80 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.67 us (1300 trials)\t\t(864.56 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 992.60 us (100 trials)\t\t(99260.05 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 0,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 84.39,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 47.13,
+        "ldpc_encoding_time_us": 13.69,
+        "dlsch_modulation_time_us": 6.85,
+        "dlsch_scrambling_time_us": 1.26,
+        "dlsch_outer_crc_time_us": 1.91,
+        "dlsch_pdsch_generation_time_us": 30.56,
+        "dlsch_mod_lm_time_us": 6.85,
+        "dlsch_resource_mapping_time_us": 6.37,
+        "dlsch_precoding_time_us": 12.86,
+        "multipath_channel_cpu_us": 130.83,
+        "add_noise_cpu_us": 564.61,
+        "rx_pdsch_stats_us": 153.67,
+        "dlsch_rx_pdcch_stats_us": 48.15,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 6.0,
+        "dlsch_channel_estimation_stats_us": 51.59,
+        "dlsch_decoding_stats_us": 1019.71,
+        "dlsch_ldpc_decoding_stats_us": 80.81,
+        "dlsch_extract_rbs_stats_us": 0.76,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 10.18,
+        "dlsch_channel_compensation_stats_us": 3.2,
+        "dlsch_llr_stats_us": 0.62,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.67,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1031.68
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 11725327276080247406\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (156/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (9.920635e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  84.39 us (100 trials)\n Statistics std=38.95, min=74.67, q1=75.25, median=75.92, q3=79.38, max=215.25 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 47.13 us (100 trials)\t\t(4713.04 total [ms])\n        |__ LDPC encoding time              13.69 us (200 trials)\n    |__ DLSCH modulation time                6.85 us (100 trials)\t\t(684.62 total [ms])\n    |__ DLSCH scrambling time                1.26 us (100 trials)\t\t(126.26 total [ms])\n        |__ DLSCH Outer CRC time             1.91 us (100 trials)\n    |__ DLSCH PDSCH Generation time         30.56 us (100 trials)\t\t(3056.04 total [ms])\n        |__ DLSCH scrambling time            1.26 us (100 trials)\n        |__ DLSCH mod/lm time                6.85 us (100 trials)\n        |__ DLSCH Resource Mapping time      6.37 us (100 trials)\n        |__ DLSCH Precoding time            12.86 us (100 trials)\n|__ Multipath Channel (CPU)                130.83 us (100 trials)\t\t(13083.00 total [ms])\n|__ Add Noise (CPU)                        564.61 us (100 trials)\t\t(56461.13 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         153.67 us (100 trials)\t\t(15366.83 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    48.15 us (100 trials)\t\t(4814.92 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             6.00 us (1400 trials)\t\t(8395.80 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          51.59 us (100 trials)\t\t(5159.38 total [ms])\n|__ DLSCH_DECODING_STATS                   1019.71 us (100 trials)\t\t(101971.37 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               80.81 us (1200 trials)\t\t(96973.69 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.76 us (1300 trials)\t\t(983.51 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(108.66 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 28.53 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                10.18 us (100 trials)\t\t(1018.42 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.20 us (1300 trials)\t\t(4158.35 total [ms])\n|__ DLSCH_LLR_STATS                          0.62 us (1300 trials)\t\t(803.77 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.67 us (1300 trials)\t\t(871.76 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1031.68 us (100 trials)\t\t(103167.70 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 1,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 81.58,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 45.56,
+        "ldpc_encoding_time_us": 12.89,
+        "dlsch_modulation_time_us": 6.53,
+        "dlsch_scrambling_time_us": 1.22,
+        "dlsch_outer_crc_time_us": 1.87,
+        "dlsch_pdsch_generation_time_us": 29.56,
+        "dlsch_mod_lm_time_us": 6.53,
+        "dlsch_resource_mapping_time_us": 5.96,
+        "dlsch_precoding_time_us": 12.68,
+        "multipath_channel_cpu_us": 128.07,
+        "add_noise_cpu_us": 558.78,
+        "rx_pdsch_stats_us": 152.44,
+        "dlsch_rx_pdcch_stats_us": 48.04,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.93,
+        "dlsch_channel_estimation_stats_us": 51.83,
+        "dlsch_decoding_stats_us": 1011.29,
+        "dlsch_ldpc_decoding_stats_us": 80.23,
+        "dlsch_extract_rbs_stats_us": 0.76,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 9.98,
+        "dlsch_channel_compensation_stats_us": 3.23,
+        "dlsch_llr_stats_us": 0.77,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.82,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1022.5
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 11097083458404435708\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (137/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (8.712352e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  81.58 us (100 trials)\n Statistics std=46.45, min=74.83, q1=75.12, median=75.42, q3=76.46, max=120.50 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 45.56 us (100 trials)\t\t(4556.26 total [ms])\n        |__ LDPC encoding time              12.89 us (200 trials)\n    |__ DLSCH modulation time                6.53 us (100 trials)\t\t(653.00 total [ms])\n    |__ DLSCH scrambling time                1.22 us (100 trials)\t\t(122.12 total [ms])\n        |__ DLSCH Outer CRC time             1.87 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.56 us (100 trials)\t\t(2955.96 total [ms])\n        |__ DLSCH scrambling time            1.22 us (100 trials)\n        |__ DLSCH mod/lm time                6.53 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.96 us (100 trials)\n        |__ DLSCH Precoding time            12.68 us (100 trials)\n|__ Multipath Channel (CPU)                128.07 us (100 trials)\t\t(12807.30 total [ms])\n|__ Add Noise (CPU)                        558.78 us (100 trials)\t\t(55878.38 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         152.44 us (100 trials)\t\t(15244.54 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    48.04 us (100 trials)\t\t(4804.21 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.93 us (1400 trials)\t\t(8300.19 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          51.83 us (100 trials)\t\t(5182.51 total [ms])\n|__ DLSCH_DECODING_STATS                   1011.29 us (100 trials)\t\t(101128.99 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               80.23 us (1200 trials)\t\t(96276.27 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.76 us (1300 trials)\t\t(985.25 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(108.57 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 28.29 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                 9.98 us (100 trials)\t\t(998.38 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.23 us (1300 trials)\t\t(4201.24 total [ms])\n|__ DLSCH_LLR_STATS                          0.77 us (1300 trials)\t\t(996.08 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.82 us (1300 trials)\t\t(1064.34 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1022.50 us (100 trials)\t\t(102249.75 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 2,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 79.5,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 44.26,
+        "ldpc_encoding_time_us": 12.79,
+        "dlsch_modulation_time_us": 6.51,
+        "dlsch_scrambling_time_us": 1.1,
+        "dlsch_outer_crc_time_us": 1.86,
+        "dlsch_pdsch_generation_time_us": 29.58,
+        "dlsch_mod_lm_time_us": 6.51,
+        "dlsch_resource_mapping_time_us": 5.93,
+        "dlsch_precoding_time_us": 12.94,
+        "multipath_channel_cpu_us": 128.27,
+        "add_noise_cpu_us": 557.73,
+        "rx_pdsch_stats_us": 148.65,
+        "dlsch_rx_pdcch_stats_us": 46.44,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.85,
+        "dlsch_channel_estimation_stats_us": 51.27,
+        "dlsch_decoding_stats_us": 1005.23,
+        "dlsch_ldpc_decoding_stats_us": 79.9,
+        "dlsch_extract_rbs_stats_us": 0.75,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 10.01,
+        "dlsch_channel_compensation_stats_us": 3.19,
+        "dlsch_llr_stats_us": 0.58,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.64,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1016.0
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 14666600559374119762\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (137/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (8.712352e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  79.50 us (100 trials)\n Statistics std=35.37, min=75.04, q1=75.29, median=75.38, q3=75.79, max=82.83 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 44.26 us (100 trials)\t\t(4426.13 total [ms])\n        |__ LDPC encoding time              12.79 us (200 trials)\n    |__ DLSCH modulation time                6.51 us (100 trials)\t\t(650.97 total [ms])\n    |__ DLSCH scrambling time                1.10 us (100 trials)\t\t(110.34 total [ms])\n        |__ DLSCH Outer CRC time             1.86 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.58 us (100 trials)\t\t(2957.83 total [ms])\n        |__ DLSCH scrambling time            1.10 us (100 trials)\n        |__ DLSCH mod/lm time                6.51 us (100 trials)\n        |__ DLSCH Resource Mapping time      5.93 us (100 trials)\n        |__ DLSCH Precoding time            12.94 us (100 trials)\n|__ Multipath Channel (CPU)                128.27 us (100 trials)\t\t(12827.46 total [ms])\n|__ Add Noise (CPU)                        557.73 us (100 trials)\t\t(55772.96 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         148.65 us (100 trials)\t\t(14865.46 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    46.44 us (100 trials)\t\t(4644.04 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.85 us (1400 trials)\t\t(8184.44 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          51.27 us (100 trials)\t\t(5126.58 total [ms])\n|__ DLSCH_DECODING_STATS                   1005.23 us (100 trials)\t\t(100523.29 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               79.90 us (1200 trials)\t\t(95885.85 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.75 us (1300 trials)\t\t(971.05 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(107.55 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 29.17 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                10.01 us (100 trials)\t\t(1001.13 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.19 us (1300 trials)\t\t(4154.32 total [ms])\n|__ DLSCH_LLR_STATS                          0.58 us (1300 trials)\t\t(756.19 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.64 us (1300 trials)\t\t(826.20 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1016.00 us (100 trials)\t\t(101599.79 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 3,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 82.38,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 45.38,
+        "ldpc_encoding_time_us": 13.1,
+        "dlsch_modulation_time_us": 6.56,
+        "dlsch_scrambling_time_us": 1.21,
+        "dlsch_outer_crc_time_us": 1.87,
+        "dlsch_pdsch_generation_time_us": 30.48,
+        "dlsch_mod_lm_time_us": 6.56,
+        "dlsch_resource_mapping_time_us": 6.1,
+        "dlsch_precoding_time_us": 13.37,
+        "multipath_channel_cpu_us": 129.62,
+        "add_noise_cpu_us": 559.19,
+        "rx_pdsch_stats_us": 153.69,
+        "dlsch_rx_pdcch_stats_us": 48.49,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 5.93,
+        "dlsch_channel_estimation_stats_us": 52.06,
+        "dlsch_decoding_stats_us": 1016.31,
+        "dlsch_ldpc_decoding_stats_us": 80.44,
+        "dlsch_extract_rbs_stats_us": 0.76,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 10.05,
+        "dlsch_channel_compensation_stats_us": 3.21,
+        "dlsch_llr_stats_us": 0.66,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.71,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1027.91
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 6963537447608807020\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (145/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (9.221103e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  82.38 us (100 trials)\n Statistics std=38.77, min=75.25, q1=75.54, median=76.08, q3=78.42, max=140.42 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 45.38 us (100 trials)\t\t(4538.54 total [ms])\n        |__ LDPC encoding time              13.10 us (200 trials)\n    |__ DLSCH modulation time                6.56 us (100 trials)\t\t(655.62 total [ms])\n    |__ DLSCH scrambling time                1.21 us (100 trials)\t\t(121.20 total [ms])\n        |__ DLSCH Outer CRC time             1.87 us (100 trials)\n    |__ DLSCH PDSCH Generation time         30.48 us (100 trials)\t\t(3048.33 total [ms])\n        |__ DLSCH scrambling time            1.21 us (100 trials)\n        |__ DLSCH mod/lm time                6.56 us (100 trials)\n        |__ DLSCH Resource Mapping time      6.10 us (100 trials)\n        |__ DLSCH Precoding time            13.37 us (100 trials)\n|__ Multipath Channel (CPU)                129.62 us (100 trials)\t\t(12961.84 total [ms])\n|__ Add Noise (CPU)                        559.19 us (100 trials)\t\t(55918.96 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         153.69 us (100 trials)\t\t(15368.92 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    48.49 us (100 trials)\t\t(4849.46 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             5.93 us (1400 trials)\t\t(8310.09 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          52.06 us (100 trials)\t\t(5205.71 total [ms])\n|__ DLSCH_DECODING_STATS                   1016.31 us (100 trials)\t\t(101630.84 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               80.44 us (1200 trials)\t\t(96530.58 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.76 us (1300 trials)\t\t(983.18 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(109.92 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 29.95 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                10.05 us (100 trials)\t\t(1005.20 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.21 us (1300 trials)\t\t(4170.61 total [ms])\n|__ DLSCH_LLR_STATS                          0.66 us (1300 trials)\t\t(852.24 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.71 us (1300 trials)\t\t(922.35 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1027.91 us (100 trials)\t\t(102790.79 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_dlsim",
+      "test_case_id": "dl_100mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_dlsim -n100 -s20 -S20.2 -e15 -b273 -R273 -P",
+      "repetition_index": 4,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 84.53,
+        "dci_encoding_time_us": 0.0,
+        "dlsch_encoding_time_us": 48.04,
+        "ldpc_encoding_time_us": 13.83,
+        "dlsch_modulation_time_us": 6.51,
+        "dlsch_scrambling_time_us": 1.21,
+        "dlsch_outer_crc_time_us": 1.86,
+        "dlsch_pdsch_generation_time_us": 29.78,
+        "dlsch_mod_lm_time_us": 6.51,
+        "dlsch_resource_mapping_time_us": 6.06,
+        "dlsch_precoding_time_us": 12.58,
+        "multipath_channel_cpu_us": 131.27,
+        "add_noise_cpu_us": 566.96,
+        "rx_pdsch_stats_us": 155.64,
+        "dlsch_rx_pdcch_stats_us": 49.69,
+        "rx_fo_compensation_stats_us": 0.0,
+        "rx_dft_stats_us": 6.05,
+        "dlsch_channel_estimation_stats_us": 51.75,
+        "dlsch_decoding_stats_us": 1023.14,
+        "dlsch_ldpc_decoding_stats_us": 80.86,
+        "dlsch_extract_rbs_stats_us": 0.78,
+        "dlsch_channel_scale_stats_us": 0.0,
+        "dlsch_channel_level_stats_us": 0.08,
+        "dlsch_mrc_mmse_stats_us": 0.02,
+        "dlsch_unscrambling_stats_us": 10.2,
+        "dlsch_channel_compensation_stats_us": 3.21,
+        "dlsch_llr_stats_us": 0.65,
+        "dlsch_layer_demapping_us": 0.0,
+        "dlsch_llr_layer_demap_stats_us": 0.7,
+        "phy_rx_pdcch_stats_us": 0.0,
+        "dlsch_procedures_stats_us": 1034.98
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_dlsim\" \"-n100\" \"-s20\" \"-S20.2\" \"-e15\" \"-b273\" \"-R273\" \"-P\" \nInitializing random number generator, seed 11434313446144720324\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.200000\nPre-allocating padded host memory for the CPU channel pipeline...\nAWGN: ricean_factor 0.000000\nAllocating 1228800 samples for txdata\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (148/15724800,0/0,0/0,0/0)\n\nDLSCH RNTI 1234: current_Qm 4, current_RI 1, total_bytes TX 1178100\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan), Channel BER (9.411884e-06,nan,nan,nan) Avg round 1.00, Eff Rate 94248.0000 bits/slot, Eff Throughput 100.00, TBS 94248 bits/slot\n*****************************************\n\n\ngNB TX function statistics (per 500 us slot, NPRB 273, mcs 15, C 12, block 94248)\nPHY proc tx                                  84.53 us (100 trials)\n Statistics std=45.50, min=74.92, q1=75.29, median=75.96, q3=79.17, max=208.75 \u00b5s (on 100 trials)\n    |__ DCI encoding time                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ DLSCH encoding time                 48.04 us (100 trials)\t\t(4804.13 total [ms])\n        |__ LDPC encoding time              13.83 us (200 trials)\n    |__ DLSCH modulation time                6.51 us (100 trials)\t\t(650.91 total [ms])\n    |__ DLSCH scrambling time                1.21 us (100 trials)\t\t(120.75 total [ms])\n        |__ DLSCH Outer CRC time             1.86 us (100 trials)\n    |__ DLSCH PDSCH Generation time         29.78 us (100 trials)\t\t(2978.01 total [ms])\n        |__ DLSCH scrambling time            1.21 us (100 trials)\n        |__ DLSCH mod/lm time                6.51 us (100 trials)\n        |__ DLSCH Resource Mapping time      6.06 us (100 trials)\n        |__ DLSCH Precoding time            12.58 us (100 trials)\n|__ Multipath Channel (CPU)                131.27 us (100 trials)\t\t(13127.42 total [ms])\n|__ Add Noise (CPU)                        566.96 us (100 trials)\t\t(56696.29 total [ms])\n\nUE function statistics (per 500 us slot)\n|__ RX_PDSCH_STATS                         155.64 us (100 trials)\t\t(15564.08 total [ms])\n|__ DLSCH_RX_PDCCH_STATS                    49.69 us (100 trials)\t\t(4969.13 total [ms])\n|__ RX_FO_COMPENSATION_STATS                 0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ RX_DFT_STATS                             6.05 us (1400 trials)\t\t(8466.10 total [ms])\n|__ DLSCH_CHANNEL_ESTIMATION_STATS          51.75 us (100 trials)\t\t(5175.46 total [ms])\n|__ DLSCH_DECODING_STATS                   1023.14 us (100 trials)\t\t(102314.21 total [ms])\n|__ DLSCH_LDPC_DECODING_STATS               80.86 us (1200 trials)\t\t(97033.38 total [ms])\n|__ DLSCH_EXTRACT_RBS_STATS                  0.78 us (1300 trials)\t\t(1010.75 total [ms])\n|__ DLSCH_CHANNEL_SCALE_STATS                0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_CHANNEL_LEVEL_STATS                0.08 us (1300 trials)\t\t(108.55 total [ms])\n|__ DLSCH_MRC_MMSE_STATS                     0.02 us (1300 trials)\t\t( 30.36 total [ms])\n|__ DLSCH_UNSCRAMBLING_STATS                10.20 us (100 trials)\t\t(1019.75 total [ms])\n|__ DLSCH_CHANNEL_COMPENSATION_STATS         3.21 us (1300 trials)\t\t(4180.69 total [ms])\n|__ DLSCH_LLR_STATS                          0.65 us (1300 trials)\t\t(840.26 total [ms])\n|__ DLSCH_LAYER_DEMAPPING                    0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_LLR_LAYER_DEMAP_STATS              0.70 us (1300 trials)\t\t(908.19 total [ms])\n|__ PHY_RX_PDCCH_STATS                       0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ DLSCH_PROCEDURES_STATS                 1034.98 us (100 trials)\t\t(103498.08 total [ms])\nPDSCH test OK\n",
+      "raw_stderr": ""
+    }
+  ],
+  "noise_floor_analysis": {
+    "test_case_id": "dl_100mhz_mcs15",
+    "metric_name": "phy_proc_tx_us",
+    "idle_stats": {
+      "count": 5,
+      "median": 80.19,
+      "iqr": 3.19,
+      "min": 76.71,
+      "max": 81.63,
+      "values": [
+        76.71,
+        78.91,
+        80.19,
+        80.36,
+        81.63
+      ]
+    },
+    "loaded_stats": {
+      "count": 5,
+      "median": 82.38,
+      "iqr": 3.92,
+      "min": 79.5,
+      "max": 84.53,
+      "values": [
+        79.5,
+        81.58,
+        82.38,
+        84.39,
+        84.53
+      ]
+    },
+    "diff_median": 2.19,
+    "diff_percentage": 2.73
+  }
+}

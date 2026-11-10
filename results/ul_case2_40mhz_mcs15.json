@@ -1,0 +1,659 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-11-10T21:04:50.100676+00:00",
+  "virtualized": true,
+  "virtualization_note": "virtualized, not representative of bare metal",
+  "duranta_commit": "dfb296ab867050a7bde81b393fa31b757ada2c83",
+  "build_flags": [
+    "-DENABLE_PHYSIM_TESTS=ON",
+    "-DSANITIZE_UNDEFINED=OFF",
+    "-DSANITIZE_ADDRESS=OFF"
+  ],
+  "platform_manifest": {
+    "uname": {
+      "sysname": "Linux",
+      "nodename": "fe556e872583",
+      "release": "7.0.12-linuxkit",
+      "version": "#1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026",
+      "machine": "aarch64"
+    },
+    "cpu_arch": "aarch64",
+    "lscpu": {
+      "lscpu": [
+        {
+          "field": "Architecture:",
+          "data": "aarch64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "64-bit"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "8"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-7"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "Apple"
+        },
+        {
+          "field": "Model name:",
+          "data": "-"
+        },
+        {
+          "field": "Model:",
+          "data": "0"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "1"
+        },
+        {
+          "field": "Core(s) per cluster:",
+          "data": "8"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "-"
+        },
+        {
+          "field": "Cluster(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "0x0"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "48.00"
+        },
+        {
+          "field": "Flags:",
+          "data": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm sb paca pacg dcpodp flagm2 frint i8mm bf16 bti"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Ghostwrite:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Old microcode:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Vulnerable"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; CSV2, but not BHB"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Not affected"
+        }
+      ]
+    },
+    "os_release": {
+      "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+      "NAME": "Ubuntu",
+      "VERSION_ID": "24.04",
+      "VERSION": "24.04.5 LTS (Noble Numbat)",
+      "VERSION_CODENAME": "noble",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "noble",
+      "LOGO": "ubuntu-logo"
+    },
+    "kernel_cmdline": "init=/initd loglevel=1 root=/dev/vdb rootfstype=erofs ro vsyscall=emulate panic=0 eth0.dhcp eth1.dhcp linuxkit.unified_cgroup_hierarchy=1 console=hvc0   virtio_net.disable_csum=1 slub_min_order=2 page_reporting.page_reporting_order=2 vpnkit.connect=connect://2/1999 com.docker.VMID=aea62e06-68b8-4682-aad3-a90598541f5e",
+    "cpu_governor": "not captured",
+    "smt_state": "not captured",
+    "turbo_boost": "not captured",
+    "isolated_cpus": "none",
+    "memory_info": {
+      "MemTotal": "8124776 kB",
+      "MemFree": "3787284 kB",
+      "MemAvailable": "6241224 kB",
+      "Buffers": "72608 kB",
+      "Cached": "2436836 kB",
+      "SwapTotal": "1048572 kB",
+      "SwapFree": "1048572 kB"
+    },
+    "compiler_version": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "virtualization": "docker"
+  },
+  "benchmark_runs": [
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 0,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 100.05,
+        "pusch_proc_stats_us": 64.78,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 32.29,
+        "ulsch_encoding_stats_us": 47.36,
+        "ofdm_mod_stats_us": 35.1,
+        "total_phy_proc_rx_us": 444.72,
+        "rx_pusch_time_us": 69.0,
+        "ulsch_channel_estimation_time_us": 13.81,
+        "antenna_processing_time_us": 8.97,
+        "rx_pusch_initialization_time_us": 3.66,
+        "rx_pusch_symbol_processing_time_us": 51.24,
+        "rx_pusch_extraction_us": 0.33,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 375.54,
+        "ulsch_segments_decoding_time_us": 69.4,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 62.22,
+        "add_noise_cpu_us": 270.79
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 6117285200879227133\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (51/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (8.716161e-06,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            100.05 us (100 trials)\t\t(10004.58 total [ms])\n|__ PUSCH_PROC_STATS                        64.78 us (100 trials)\t\t(6478.38 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               32.29 us (100 trials)\t\t(3228.79 total [ms])\n|__ ULSCH_ENCODING_STATS                    47.36 us (100 trials)\t\t(4736.29 total [ms])\n|__ OFDM_MOD_STATS                          35.10 us (100 trials)\t\t(3510.25 total [ms])\n\ngNB RX\nTotal PHY proc rx                           444.72 us (100 trials)\n Statistics std=73.36, min=404.12, q1=413.29, median=427.54, q3=448.58, max=508.25 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           69.00 us (100 trials)\t\t(6900.00 total [ms])\n    |__ ULSCH channel estimation time       13.81 us (100 trials)\t\t(1381.25 total [ms])\n        |__ Antenna Processing time          8.97 us (100 trials)\n    |__ RX PUSCH Initialization time         3.66 us (100 trials)\t\t(366.04 total [ms])\n    |__ RX PUSCH Symbol Processing time     51.24 us (100 trials)\t\t(5124.45 total [ms])\n        |__ RX PUSCH extraction              0.33 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              375.54 us (100 trials)\t\t(37553.88 total [ms])\n    |__ ULSCH segments decoding time        69.40 us (500 trials)\t\t(34700.07 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 62.22 us (100 trials)\t\t(6221.50 total [ms])\n|__ Add Noise (CPU)                        270.79 us (100 trials)\t\t(27079.16 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 1,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 100.9,
+        "pusch_proc_stats_us": 64.84,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 32.47,
+        "ulsch_encoding_stats_us": 46.99,
+        "ofdm_mod_stats_us": 35.88,
+        "total_phy_proc_rx_us": 457.76,
+        "rx_pusch_time_us": 70.77,
+        "ulsch_channel_estimation_time_us": 14.07,
+        "antenna_processing_time_us": 9.16,
+        "rx_pusch_initialization_time_us": 3.76,
+        "rx_pusch_symbol_processing_time_us": 52.62,
+        "rx_pusch_extraction_us": 0.36,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 386.8,
+        "ulsch_segments_decoding_time_us": 71.39,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 64.44,
+        "add_noise_cpu_us": 272.02
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 9250254680607603524\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (66/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.127974e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            100.90 us (100 trials)\t\t(10090.17 total [ms])\n|__ PUSCH_PROC_STATS                        64.84 us (100 trials)\t\t(6483.92 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               32.47 us (100 trials)\t\t(3247.13 total [ms])\n|__ ULSCH_ENCODING_STATS                    46.99 us (100 trials)\t\t(4699.25 total [ms])\n|__ OFDM_MOD_STATS                          35.88 us (100 trials)\t\t(3587.83 total [ms])\n\ngNB RX\nTotal PHY proc rx                           457.76 us (100 trials)\n Statistics std=70.25, min=396.96, q1=418.08, median=437.62, q3=466.46, max=616.46 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           70.77 us (100 trials)\t\t(7077.13 total [ms])\n    |__ ULSCH channel estimation time       14.07 us (100 trials)\t\t(1406.96 total [ms])\n        |__ Antenna Processing time          9.16 us (100 trials)\n    |__ RX PUSCH Initialization time         3.76 us (100 trials)\t\t(375.70 total [ms])\n    |__ RX PUSCH Symbol Processing time     52.62 us (100 trials)\t\t(5262.00 total [ms])\n        |__ RX PUSCH extraction              0.36 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              386.80 us (100 trials)\t\t(38680.46 total [ms])\n    |__ ULSCH segments decoding time        71.39 us (500 trials)\t\t(35695.29 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 64.44 us (100 trials)\t\t(6444.00 total [ms])\n|__ Add Noise (CPU)                        272.02 us (100 trials)\t\t(27202.51 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 2,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 101.58,
+        "pusch_proc_stats_us": 65.79,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 32.86,
+        "ulsch_encoding_stats_us": 47.04,
+        "ofdm_mod_stats_us": 35.51,
+        "total_phy_proc_rx_us": 465.66,
+        "rx_pusch_time_us": 73.3,
+        "ulsch_channel_estimation_time_us": 14.23,
+        "antenna_processing_time_us": 9.23,
+        "rx_pusch_initialization_time_us": 3.81,
+        "rx_pusch_symbol_processing_time_us": 54.89,
+        "rx_pusch_extraction_us": 0.36,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 392.17,
+        "ulsch_segments_decoding_time_us": 72.24,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 89.18,
+        "add_noise_cpu_us": 272.87
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 657479173431552168\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (70/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.196336e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            101.58 us (100 trials)\t\t(10157.71 total [ms])\n|__ PUSCH_PROC_STATS                        65.79 us (100 trials)\t\t(6579.00 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               32.86 us (100 trials)\t\t(3286.13 total [ms])\n|__ ULSCH_ENCODING_STATS                    47.04 us (100 trials)\t\t(4704.04 total [ms])\n|__ OFDM_MOD_STATS                          35.51 us (100 trials)\t\t(3551.29 total [ms])\n\ngNB RX\nTotal PHY proc rx                           465.66 us (100 trials)\n Statistics std=84.51, min=399.71, q1=423.96, median=437.33, q3=472.71, max=625.29 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           73.30 us (100 trials)\t\t(7329.71 total [ms])\n    |__ ULSCH channel estimation time       14.23 us (100 trials)\t\t(1422.75 total [ms])\n        |__ Antenna Processing time          9.23 us (100 trials)\n    |__ RX PUSCH Initialization time         3.81 us (100 trials)\t\t(380.50 total [ms])\n    |__ RX PUSCH Symbol Processing time     54.89 us (100 trials)\t\t(5488.67 total [ms])\n        |__ RX PUSCH extraction              0.36 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              392.17 us (100 trials)\t\t(39217.29 total [ms])\n    |__ ULSCH segments decoding time        72.24 us (500 trials)\t\t(36120.17 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 89.18 us (100 trials)\t\t(8917.66 total [ms])\n|__ Add Noise (CPU)                        272.87 us (100 trials)\t\t(27286.87 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 3,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 101.7,
+        "pusch_proc_stats_us": 63.63,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 31.47,
+        "ulsch_encoding_stats_us": 45.71,
+        "ofdm_mod_stats_us": 37.88,
+        "total_phy_proc_rx_us": 468.26,
+        "rx_pusch_time_us": 75.36,
+        "ulsch_channel_estimation_time_us": 14.19,
+        "antenna_processing_time_us": 9.27,
+        "rx_pusch_initialization_time_us": 4.22,
+        "rx_pusch_symbol_processing_time_us": 56.63,
+        "rx_pusch_extraction_us": 0.37,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 392.7,
+        "ulsch_segments_decoding_time_us": 72.44,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 70.0,
+        "add_noise_cpu_us": 271.8
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 2900219298134546411\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (55/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (9.399781e-06,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            101.70 us (100 trials)\t\t(10169.84 total [ms])\n|__ PUSCH_PROC_STATS                        63.63 us (100 trials)\t\t(6362.67 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               31.47 us (100 trials)\t\t(3146.67 total [ms])\n|__ ULSCH_ENCODING_STATS                    45.71 us (100 trials)\t\t(4571.01 total [ms])\n|__ OFDM_MOD_STATS                          37.88 us (100 trials)\t\t(3788.38 total [ms])\n\ngNB RX\nTotal PHY proc rx                           468.26 us (100 trials)\n Statistics std=98.60, min=400.71, q1=423.25, median=438.71, q3=468.21, max=815.29 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           75.36 us (100 trials)\t\t(7535.96 total [ms])\n    |__ ULSCH channel estimation time       14.19 us (100 trials)\t\t(1419.04 total [ms])\n        |__ Antenna Processing time          9.27 us (100 trials)\n    |__ RX PUSCH Initialization time         4.22 us (100 trials)\t\t(421.67 total [ms])\n    |__ RX PUSCH Symbol Processing time     56.63 us (100 trials)\t\t(5663.42 total [ms])\n        |__ RX PUSCH extraction              0.37 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              392.70 us (100 trials)\t\t(39270.41 total [ms])\n    |__ ULSCH segments decoding time        72.44 us (500 trials)\t\t(36221.71 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 70.00 us (100 trials)\t\t(7000.54 total [ms])\n|__ Add Noise (CPU)                        271.80 us (100 trials)\t\t(27180.21 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "idle",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 4,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 101.43,
+        "pusch_proc_stats_us": 65.55,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 32.69,
+        "ulsch_encoding_stats_us": 47.3,
+        "ofdm_mod_stats_us": 35.7,
+        "total_phy_proc_rx_us": 463.52,
+        "rx_pusch_time_us": 70.69,
+        "ulsch_channel_estimation_time_us": 13.93,
+        "antenna_processing_time_us": 9.03,
+        "rx_pusch_initialization_time_us": 3.68,
+        "rx_pusch_symbol_processing_time_us": 52.78,
+        "rx_pusch_extraction_us": 0.35,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 392.65,
+        "ulsch_segments_decoding_time_us": 72.13,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 64.36,
+        "add_noise_cpu_us": 275.51
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 16930926332773320387\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (64/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.093793e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            101.43 us (100 trials)\t\t(10142.67 total [ms])\n|__ PUSCH_PROC_STATS                        65.55 us (100 trials)\t\t(6554.70 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               32.69 us (100 trials)\t\t(3268.67 total [ms])\n|__ ULSCH_ENCODING_STATS                    47.30 us (100 trials)\t\t(4729.67 total [ms])\n|__ OFDM_MOD_STATS                          35.70 us (100 trials)\t\t(3570.54 total [ms])\n\ngNB RX\nTotal PHY proc rx                           463.52 us (100 trials)\n Statistics std=83.26, min=398.42, q1=424.12, median=439.79, q3=471.08, max=592.83 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           70.69 us (100 trials)\t\t(7068.95 total [ms])\n    |__ ULSCH channel estimation time       13.93 us (100 trials)\t\t(1392.58 total [ms])\n        |__ Antenna Processing time          9.03 us (100 trials)\n    |__ RX PUSCH Initialization time         3.68 us (100 trials)\t\t(368.38 total [ms])\n    |__ RX PUSCH Symbol Processing time     52.78 us (100 trials)\t\t(5277.67 total [ms])\n        |__ RX PUSCH extraction              0.35 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              392.65 us (100 trials)\t\t(39265.13 total [ms])\n    |__ ULSCH segments decoding time        72.13 us (500 trials)\t\t(36064.49 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 64.36 us (100 trials)\t\t(6436.25 total [ms])\n|__ Add Noise (CPU)                        275.51 us (100 trials)\t\t(27551.08 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 0,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 105.06,
+        "pusch_proc_stats_us": 67.77,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 34.01,
+        "ulsch_encoding_stats_us": 49.16,
+        "ofdm_mod_stats_us": 37.09,
+        "total_phy_proc_rx_us": 483.02,
+        "rx_pusch_time_us": 74.55,
+        "ulsch_channel_estimation_time_us": 14.93,
+        "antenna_processing_time_us": 9.73,
+        "rx_pusch_initialization_time_us": 3.87,
+        "rx_pusch_symbol_processing_time_us": 55.31,
+        "rx_pusch_extraction_us": 0.38,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 408.28,
+        "ulsch_segments_decoding_time_us": 74.65,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 64.99,
+        "add_noise_cpu_us": 283.69
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 9816452186558952743\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (51/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (8.716161e-06,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            105.06 us (100 trials)\t\t(10505.71 total [ms])\n|__ PUSCH_PROC_STATS                        67.77 us (100 trials)\t\t(6777.07 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               34.01 us (100 trials)\t\t(3400.83 total [ms])\n|__ ULSCH_ENCODING_STATS                    49.16 us (100 trials)\t\t(4916.53 total [ms])\n|__ OFDM_MOD_STATS                          37.09 us (100 trials)\t\t(3709.54 total [ms])\n\ngNB RX\nTotal PHY proc rx                           483.02 us (100 trials)\n Statistics std=102.95, min=434.42, q1=443.38, median=452.54, q3=464.67, max=786.96 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           74.55 us (100 trials)\t\t(7454.58 total [ms])\n    |__ ULSCH channel estimation time       14.93 us (100 trials)\t\t(1493.00 total [ms])\n        |__ Antenna Processing time          9.73 us (100 trials)\n    |__ RX PUSCH Initialization time         3.87 us (100 trials)\t\t(387.08 total [ms])\n    |__ RX PUSCH Symbol Processing time     55.31 us (100 trials)\t\t(5531.58 total [ms])\n        |__ RX PUSCH extraction              0.38 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              408.28 us (100 trials)\t\t(40828.25 total [ms])\n    |__ ULSCH segments decoding time        74.65 us (500 trials)\t\t(37326.43 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 64.99 us (100 trials)\t\t(6499.25 total [ms])\n|__ Add Noise (CPU)                        283.69 us (100 trials)\t\t(28369.13 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 1,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 100.94,
+        "pusch_proc_stats_us": 65.1,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 31.48,
+        "ulsch_encoding_stats_us": 45.69,
+        "ofdm_mod_stats_us": 35.65,
+        "total_phy_proc_rx_us": 456.15,
+        "rx_pusch_time_us": 70.58,
+        "ulsch_channel_estimation_time_us": 14.24,
+        "antenna_processing_time_us": 9.22,
+        "rx_pusch_initialization_time_us": 3.7,
+        "rx_pusch_symbol_processing_time_us": 52.38,
+        "rx_pusch_extraction_us": 0.33,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 385.39,
+        "ulsch_segments_decoding_time_us": 71.13,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 64.35,
+        "add_noise_cpu_us": 278.38
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 16791908011058664427\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (71/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.213426e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            100.94 us (100 trials)\t\t(10093.71 total [ms])\n|__ PUSCH_PROC_STATS                        65.10 us (100 trials)\t\t(6509.71 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               31.48 us (100 trials)\t\t(3148.49 total [ms])\n|__ ULSCH_ENCODING_STATS                    45.69 us (100 trials)\t\t(4569.08 total [ms])\n|__ OFDM_MOD_STATS                          35.65 us (100 trials)\t\t(3565.33 total [ms])\n\ngNB RX\nTotal PHY proc rx                           456.15 us (100 trials)\n Statistics std=74.82, min=429.71, q1=435.62, median=439.50, q3=445.71, max=474.04 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           70.58 us (100 trials)\t\t(7058.05 total [ms])\n    |__ ULSCH channel estimation time       14.24 us (100 trials)\t\t(1424.13 total [ms])\n        |__ Antenna Processing time          9.22 us (100 trials)\n    |__ RX PUSCH Initialization time         3.70 us (100 trials)\t\t(369.62 total [ms])\n    |__ RX PUSCH Symbol Processing time     52.38 us (100 trials)\t\t(5238.41 total [ms])\n        |__ RX PUSCH extraction              0.33 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              385.39 us (100 trials)\t\t(38538.96 total [ms])\n    |__ ULSCH segments decoding time        71.13 us (500 trials)\t\t(35563.40 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 64.35 us (100 trials)\t\t(6435.46 total [ms])\n|__ Add Noise (CPU)                        278.38 us (100 trials)\t\t(27838.59 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 2,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 103.82,
+        "pusch_proc_stats_us": 67.91,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 34.41,
+        "ulsch_encoding_stats_us": 50.34,
+        "ofdm_mod_stats_us": 35.72,
+        "total_phy_proc_rx_us": 455.06,
+        "rx_pusch_time_us": 70.8,
+        "ulsch_channel_estimation_time_us": 14.19,
+        "antenna_processing_time_us": 9.16,
+        "rx_pusch_initialization_time_us": 3.71,
+        "rx_pusch_symbol_processing_time_us": 52.62,
+        "rx_pusch_extraction_us": 0.33,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 384.08,
+        "ulsch_segments_decoding_time_us": 72.07,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 64.8,
+        "add_noise_cpu_us": 279.89
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 7707091001073404429\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (67/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.145064e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            103.82 us (100 trials)\t\t(10381.62 total [ms])\n|__ PUSCH_PROC_STATS                        67.91 us (100 trials)\t\t(6791.38 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               34.41 us (100 trials)\t\t(3440.96 total [ms])\n|__ ULSCH_ENCODING_STATS                    50.34 us (100 trials)\t\t(5034.16 total [ms])\n|__ OFDM_MOD_STATS                          35.72 us (100 trials)\t\t(3572.30 total [ms])\n\ngNB RX\nTotal PHY proc rx                           455.06 us (100 trials)\n Statistics std=82.42, min=427.71, q1=435.38, median=440.00, q3=446.04, max=458.58 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           70.80 us (100 trials)\t\t(7079.92 total [ms])\n    |__ ULSCH channel estimation time       14.19 us (100 trials)\t\t(1419.13 total [ms])\n        |__ Antenna Processing time          9.16 us (100 trials)\n    |__ RX PUSCH Initialization time         3.71 us (100 trials)\t\t(371.54 total [ms])\n    |__ RX PUSCH Symbol Processing time     52.62 us (100 trials)\t\t(5261.76 total [ms])\n        |__ RX PUSCH extraction              0.33 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              384.08 us (100 trials)\t\t(38408.04 total [ms])\n    |__ ULSCH segments decoding time        72.07 us (500 trials)\t\t(36036.20 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 64.80 us (100 trials)\t\t(6480.25 total [ms])\n|__ Add Noise (CPU)                        279.89 us (100 trials)\t\t(27989.46 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 3,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 104.64,
+        "pusch_proc_stats_us": 67.51,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 35.08,
+        "ulsch_encoding_stats_us": 49.23,
+        "ofdm_mod_stats_us": 36.94,
+        "total_phy_proc_rx_us": 479.18,
+        "rx_pusch_time_us": 76.56,
+        "ulsch_channel_estimation_time_us": 14.57,
+        "antenna_processing_time_us": 9.37,
+        "rx_pusch_initialization_time_us": 3.92,
+        "rx_pusch_symbol_processing_time_us": 57.74,
+        "rx_pusch_extraction_us": 0.35,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 402.41,
+        "ulsch_segments_decoding_time_us": 73.87,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 65.79,
+        "add_noise_cpu_us": 282.56
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 7033807093650361741\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (74/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (1.264698e-05,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            104.64 us (100 trials)\t\t(10464.00 total [ms])\n|__ PUSCH_PROC_STATS                        67.51 us (100 trials)\t\t(6751.16 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               35.08 us (100 trials)\t\t(3508.37 total [ms])\n|__ ULSCH_ENCODING_STATS                    49.23 us (100 trials)\t\t(4922.71 total [ms])\n|__ OFDM_MOD_STATS                          36.94 us (100 trials)\t\t(3694.28 total [ms])\n\ngNB RX\nTotal PHY proc rx                           479.18 us (100 trials)\n Statistics std=85.66, min=434.29, q1=443.79, median=451.92, q3=466.83, max=746.96 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           76.56 us (100 trials)\t\t(7655.96 total [ms])\n    |__ ULSCH channel estimation time       14.57 us (100 trials)\t\t(1457.54 total [ms])\n        |__ Antenna Processing time          9.37 us (100 trials)\n    |__ RX PUSCH Initialization time         3.92 us (100 trials)\t\t(392.54 total [ms])\n    |__ RX PUSCH Symbol Processing time     57.74 us (100 trials)\t\t(5773.88 total [ms])\n        |__ RX PUSCH extraction              0.35 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              402.41 us (100 trials)\t\t(40241.46 total [ms])\n    |__ ULSCH segments decoding time        73.87 us (500 trials)\t\t(36933.47 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 65.79 us (100 trials)\t\t(6579.09 total [ms])\n|__ Add Noise (CPU)                        282.56 us (100 trials)\t\t(28255.96 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    },
+    {
+      "benchmark_name": "nr_ulsim",
+      "test_case_id": "ul_40mhz_mcs15",
+      "condition": "loaded",
+      "command": "/build/nr_ulsim -n100 -s20 -S20 -m15 -r106 -R106 -C8 -P",
+      "repetition_index": 4,
+      "taskset_cpu_list": "0",
+      "exit_code": 0,
+      "status": "success",
+      "metrics": {
+        "phy_proc_tx_us": 102.65,
+        "pusch_proc_stats_us": 64.59,
+        "uci_on_pusch_mapping_us": 0.0,
+        "ulsch_ldpc_encoding_stats_us": 31.83,
+        "ulsch_encoding_stats_us": 46.46,
+        "ofdm_mod_stats_us": 37.85,
+        "total_phy_proc_rx_us": 480.61,
+        "rx_pusch_time_us": 77.02,
+        "ulsch_channel_estimation_time_us": 14.77,
+        "antenna_processing_time_us": 9.69,
+        "rx_pusch_initialization_time_us": 3.85,
+        "rx_pusch_symbol_processing_time_us": 58.03,
+        "rx_pusch_extraction_us": 0.37,
+        "rx_pusch_channel_compensation_us": 0.0,
+        "rx_pusch_llr_us": 0.0,
+        "rx_pusch_layer_demapping_us": 0.0,
+        "rx_pusch_unscrambling_us": 0.0,
+        "ulsch_total_decoding_time_us": 403.37,
+        "ulsch_segments_decoding_time_us": 73.99,
+        "rx_srs_time_us": 0.0,
+        "generate_srs_sequence_time_us": 0.0,
+        "get_srs_signal_time_us": 0.0,
+        "srs_channel_estimation_time_us": 0.0,
+        "srs_timing_advance_estimation_time_us": 0.0,
+        "srs_report_tlv_build_time_us": 0.0,
+        "srs_beam_report_build_time_us": 0.0,
+        "srs_iq_matrix_build_time_us": 0.0,
+        "multipath_channel_cpu_us": 65.2,
+        "add_noise_cpu_us": 281.03
+      },
+      "raw_stdout": "CMDLINE: \"/build/nr_ulsim\" \"-n100\" \"-s20\" \"-S20\" \"-m15\" \"-r106\" \"-R106\" \"-C8\" \"-P\" \nInitializing random number generator, seed 14160292278074289116\nSetting SNR0 to 20.000000\nSetting SNR1 to 20.000000\nAWGN: ricean_factor 0.000000\nPre-allocating padded host memory for the CPU channel pipeline...\n[ULSIM]: length_dmrs: 1, l_prime_mask: 1\tnumber_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 \n[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 106, nb_symb_sch: 12, start_symbol 0\n[ULSIM]: MCS: 15, mod order: 4, code_rate: 6160\n[ULSIM]: VALUE OF G: 58512, TBS: 34816\n*****************************************\nSNR 20.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (48/5851200,0/0,0/0,0/0)\n\nSNR 20.000000: Channel BLER (0.000000e+00,nan,nan,nan Channel BER (8.203445e-06,nan,nan,nan) Avg round 1.00, Eff Rate 34816.0000 bits/slot, Eff Throughput 100.00, TBS 34816 bits/slot\nDMRS-PUSCH delay estimation: min 0, max 0, average 0.0\n*****************************************\n\nUE TX\n|__ PHY_PROC_TX                            102.65 us (100 trials)\t\t(10264.75 total [ms])\n|__ PUSCH_PROC_STATS                        64.59 us (100 trials)\t\t(6458.71 total [ms])\n|__ UCI_ON_PUSCH_MAPPING                     0.00 us (  0 trials)\t\t(  0.00 total [ms])\n|__ ULSCH_LDPC_ENCODING_STATS               31.83 us (100 trials)\t\t(3183.08 total [ms])\n|__ ULSCH_ENCODING_STATS                    46.46 us (100 trials)\t\t(4645.71 total [ms])\n|__ OFDM_MOD_STATS                          37.85 us (100 trials)\t\t(3785.59 total [ms])\n\ngNB RX\nTotal PHY proc rx                           480.61 us (100 trials)\n Statistics std=84.23, min=432.04, q1=446.54, median=452.25, q3=463.00, max=723.25 \u00b5s (on 100 trials)\n|__ RX PUSCH time                           77.02 us (100 trials)\t\t(7702.46 total [ms])\n    |__ ULSCH channel estimation time       14.77 us (100 trials)\t\t(1477.00 total [ms])\n        |__ Antenna Processing time          9.69 us (100 trials)\n    |__ RX PUSCH Initialization time         3.85 us (100 trials)\t\t(384.54 total [ms])\n    |__ RX PUSCH Symbol Processing time     58.03 us (100 trials)\t\t(5803.20 total [ms])\n        |__ RX PUSCH extraction              0.37 us (100 trials)\n        |__ RX PUSCH channel compensation    0.00 us (100 trials)\n        |__ RX PUSCH LLR                     0.00 us (100 trials)\n        |__ RX PUSCH layer demapping         0.00 us (100 trials)\n        |__ RX PUSCH unscrambling            0.00 us (100 trials)\n|__ ULSCH total decoding time              403.37 us (100 trials)\t\t(40337.17 total [ms])\n    |__ ULSCH segments decoding time        73.99 us (500 trials)\t\t(36993.10 total [ms])\n|__ RX SRS time                              0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Generate SRS sequence time           0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ Get SRS signal time                  0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS channel estimation time          0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS timing advance estimation time   0.00 us (  0 trials)\t\t(  0.00 total [ms])\n    |__ SRS report TLV build time            0.00 us (  0 trials)\t\t(  0.00 total [ms])\n        |__ SRS beam report build time       0.00 us (  0 trials)\n        |__ SRS IQ matrix build time         0.00 us (  0 trials)\n|__ Multipath Channel (CPU)                 65.20 us (100 trials)\t\t(6519.76 total [ms])\n|__ Add Noise (CPU)                        281.03 us (100 trials)\t\t(28102.79 total [ms])\n\n*************\nPUSCH test OK\n*************\n\nNum RB:\t106\nNum symbols:\t12\nMCS:\t15\nDMRS config type:\t0\nDMRS add pos:\t0\nPUSCH mapping type:\t1\nDMRS length:\t1\nDMRS CDM gr w/o data:\t1\n",
+      "raw_stderr": ""
+    }
+  ],
+  "noise_floor_analysis": {
+    "test_case_id": "ul_40mhz_mcs15",
+    "metric_name": "total_phy_proc_rx_us",
+    "idle_stats": {
+      "count": 5,
+      "median": 463.52,
+      "iqr": 15.72,
+      "min": 444.72,
+      "max": 468.26,
+      "values": [
+        444.72,
+        457.76,
+        463.52,
+        465.66,
+        468.26
+      ]
+    },
+    "loaded_stats": {
+      "count": 5,
+      "median": 479.18,
+      "iqr": 26.21,
+      "min": 455.06,
+      "max": 483.02,
+      "values": [
+        455.06,
+        456.15,
+        479.18,
+        480.61,
+        483.02
+      ]
+    },
+    "diff_median": 15.66,
+    "diff_percentage": 3.38
+  }
+}
