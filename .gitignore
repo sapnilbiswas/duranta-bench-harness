@@ -10,4 +10,5 @@ venv/
 build/
 ran_build/
 microbench/meas_overhead
+*.log
 
