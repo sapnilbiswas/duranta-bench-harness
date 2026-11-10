@@ -63,3 +63,4 @@ Every file path, function name, and line reference has been verified directly ag
   - `irqaffinity=0,1,2,3` (routes hardware interrupts away from isolated cores)
   - `rcu_nocbs=4-31` (offloads RCU callbacks to non-isolated housekeeping cores)
 - **Gap**: No automated harness check to verify whether these settings are active before benchmarks run.
+

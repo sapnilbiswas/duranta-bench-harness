@@ -1,0 +1,17 @@
+{
+  "lscpu": [
+    {
+      "field": "Architecture:",
+      "data": "aarch64"
+    },
+    {
+      "field": "CPU(s):",
+      "data": "8"
+    },
+    {
+      "field": "Vendor ID:",
+      "data": "Apple"
+    }
+  ]
+}
+
