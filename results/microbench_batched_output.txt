@@ -1,0 +1,45 @@
+================================================================================
+Duranta-OAI Probe-Overhead Microbenchmark
+Total Iterations: 1000000
+Hardware Counter Frequency (ARM64 cntvct_el0): 24000000 Hz (24.00 MHz)
+Hardware Tick Resolution Floor: 41.67 ns
+================================================================================
+
+--- 1. Single-Call Unbatched Results (Direct Measurement, Subject to Timer Quantization) ---
+Target                                   |        Min |     Median |        p99 |        Max
+-----------------------------------------+------------+------------+------------+------------
+Empty loop (baseline)                    |        0 ns |        0 ns |       42 ns |   582583 ns
+clock_gettime(CLOCK_MONOTONIC)           |        0 ns |        0 ns |       42 ns |    22459 ns
+clock_gettime(CLOCK_MONOTONIC_RAW)       |        0 ns |        0 ns |       42 ns |    15958 ns
+OAI time_meas (start/stop pair)          |        0 ns |        0 ns |       42 ns |    12917 ns
+CPU tick counter (ARM64 cntvct_el0)      |       0 tick |       0 tick |       0 tick |       1 tick
+
+--- 2. Batched Timing Results (Amortized per Operation across 1000 Batches of 1000 Ops) ---
+Target                                   |        Min |     Median |        p99 |        Max
+-----------------------------------------+------------+------------+------------+------------
+Empty loop (baseline)                    |    0.29 ns |    0.33 ns |    0.33 ns |    0.38 ns
+clock_gettime(CLOCK_MONOTONIC)           |   15.96 ns |   16.33 ns |   23.46 ns |   29.71 ns
+clock_gettime(CLOCK_MONOTONIC_RAW)       |   16.46 ns |   16.58 ns |   24.04 ns |   55.88 ns
+OAI time_meas (start/stop pair)          |   39.33 ns |   39.46 ns |   53.50 ns |   72.58 ns
+CPU tick counter (ARM64 cntvct_el0)      |    0.25 ns |    0.33 ns |    0.33 ns |    1.00 ns
+
+=== JSON RESULTS ===
+{
+  "total_iterations": 1000000,
+  "counter_frequency_hz": 24000000,
+  "counter_resolution_ns": 41.67,
+  "single_call_unbatched": {
+    "empty_loop_ns": {"min": 0, "median": 0, "p99": 42, "max": 582583},
+    "clock_monotonic_ns": {"min": 0, "median": 0, "p99": 42, "max": 22459},
+    "clock_monotonic_raw_ns": {"min": 0, "median": 0, "p99": 42, "max": 15958},
+    "oai_time_meas_ns": {"min": 0, "median": 0, "p99": 42, "max": 12917}
+  },
+  "batched_amortized": {
+    "batch_size": 1000,
+    "batch_count": 1000,
+    "empty_loop_ns": {"min": 0.29, "median": 0.33, "p99": 0.33, "max": 0.38},
+    "clock_monotonic_ns": {"min": 15.96, "median": 16.33, "p99": 23.46, "max": 29.71},
+    "clock_monotonic_raw_ns": {"min": 16.46, "median": 16.58, "p99": 24.04, "max": 55.88},
+    "oai_time_meas_ns": {"min": 39.33, "median": 39.46, "p99": 53.50, "max": 72.58}
+  }
+}
