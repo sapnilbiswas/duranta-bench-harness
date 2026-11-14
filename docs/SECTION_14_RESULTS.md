@@ -42,15 +42,19 @@ To overcome clock quantization, batched timing was implemented measuring 1,000 b
 
 ## 3. Physical Simulator Benchmarks & Noise Floor (30 Repetitions Each, $N = 30$)
 
-The test runner was executed for 30 repetitions idle and 30 repetitions under background CPU contention on non-pinned cores (pinned to CPU 0, background stress on CPUs 1–3, 100 frames per run, $N = 30$):
+Simulator benchmarks were evaluated under both single-core execution and multi-threaded worker pool configurations:
 
-| Test Case | Metric | Idle Median (IQR) | Loaded Median (IQR) | Shift (Δ) | % Shift | 500 µs Slot Budget |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Case 1: DL 40 MHz** (106 PRB, MCS 15) | `phy_proc_tx_us` | 48.26 µs (1.17) | 49.80 µs (0.89) | +1.54 µs | +3.19% | 9.65% → 9.96% |
-| **Case 2: UL 40 MHz** (106 PRB, MCS 15) | `total_phy_proc_rx_us` | 392.00 µs (6.89) | 405.64 µs (7.56) | +13.64 µs | +3.48% | **78.40% → 81.13%** |
-| **Case 3: DL 100 MHz** (273 PRB, MCS 15) | `phy_proc_tx_us` | 77.69 µs (1.65) | 79.79 µs (1.32) | +2.10 µs | +2.70% | 15.54% → 15.96% |
+| Test Case | Configuration & Threading | Pinned CPU | Metric | Idle Median (IQR) | Loaded Median (IQR) | Shift (Δ) | % Shift | 500 µs Slot Budget |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Case 1: DL 40 MHz** (106 PRB, MCS 15) | Single-thread (`nr_dlsim`) | Core 0 | `phy_proc_tx_us` | 48.26 µs (1.17) | 49.80 µs (0.89) | +1.54 µs | +3.19% | 9.65% → 9.96% |
+| **Case 2a: UL 40 MHz** (106 PRB, MCS 15) | Single-thread (`threadCnt=0`) | Core 0 | `total_phy_proc_rx_us` | 392.00 µs (6.89) | 405.64 µs (7.56) | +13.64 µs | +3.48% | **78.40% → 81.13%** |
+| **Case 2b: UL 40 MHz** (106 PRB, MCS 15) | Multi-thread (`-C8` worker pool) | Floating (Cores 0–7) | `total_phy_proc_rx_us` | 300.00 µs (20.59) | 398.45 µs (101.18) | +98.45 µs | +32.82% | **60.00% → 79.69%** |
+| **Case 3: DL 100 MHz** (273 PRB, MCS 15) | Single-thread (`nr_dlsim`) | Core 0 | `phy_proc_tx_us` | 77.69 µs (1.65) | 79.79 µs (1.32) | +2.10 µs | +2.70% | 15.54% → 15.96% |
 
-*Slot Deadline Observation*: Under 3GPP numerology $\mu=1$ (30 kHz SCS), the slot deadline is 500 µs. Downlink processing easily clears the deadline (< 16% budget). However, uplink processing consumes **78.4% of the slot budget idle** and rises to **81.1% under background load**, leaving ~94 µs of headroom before deadline violation on this virtualized setup.
+### Clarification on Threading and Pinning in Case 2
+- **Single-Core Baseline (Case 2a)**: Ran with `threadCnt = 0` (no `-C` flag) pinned to Core 0 (`taskset -c 0`). No worker threads were spawned, so the 392.00 µs figure reflects pure sequential execution on a single core (sequential LDPC decoding alone took ~356 µs).
+- **Multi-Threaded Worker Pool (Case 2b)**: Matches `doc/kpi.md` line 222 (`-C8`). Spawning 8 floating worker threads parallelizes LDPC decoding, reducing idle execution time to **300.00 µs** (60.0% of slot budget). However, because worker threads float across cores, applying background contention on cores 4–7 causes thread descheduling and cache thrashing, increasing latency by **+32.8% to 398.45 µs**.
+- If `-C8` is passed while the entire process is pinned to Core 0 (`taskset -c 0`), all 8 worker threads and the main thread time-slice on that single core, inflating processing time to **458.16 µs**. This demonstrates why explicit thread affinity (`-Y`) and core isolation (`isolcpus`) are vital in Deliverable 6.
 
 ---
 
@@ -59,3 +63,5 @@ The test runner was executed for 30 repetitions idle and 30 repetitions under ba
 Executed over 30 repeated F1Setup procedure transactions:
 - **Completed Transactions**: 30 / 30 (100% success rate, 0 unmatched/timeouts)
 - **Round-Trip Latency**: Min 3.041 ms | **Median 3.568 ms** | Mean 3.572 ms | Max 4.168 ms | IQR 0.552 ms
+
+*Capture Source Clarification*: These 30 F1Setup transactions were extracted from a **scripted validation PCAP fixture (`tests/fixtures/f1ap_30reps.pcapng`)** generated with `text2pcap` using verified 3GPP APER hex vectors from Duranta's `f1ap_lib_test.c`. This verifies that the tshark extractor correctly parses SCTP PPID 62, identifies procedure codes, matches request-response pairs, detects timeouts, and computes percentile statistics. **It does not represent Duranta's live CU/DU over-the-wire latency.** Live characterization over live SCTP links is one of the primary deliverables of the mentorship itself (Deliverable 4).
