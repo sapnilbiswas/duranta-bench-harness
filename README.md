@@ -10,16 +10,16 @@ The goal of this proof-of-concept is to demonstrate a rigorous, reproducible, an
 
 ### What This Harness Does
 - **Platform Manifest Collection**: Automatically captures hardware topology (`lscpu --json`), operating system (`/etc/os-release`), kernel arguments (`/proc/cmdline`), memory metrics (`/proc/meminfo`), compiler version, git commit hash, and virtualization status (`systemd-detect-virt`). Inaccessible metrics (e.g. unprivileged CPU governors) are recorded honestly as `"not captured"`.
-- **Standardized Schema**: Validates all benchmark results against a versioned JSON Schema ([`schemas/result.schema.json`](file:///Users/sapnilbiswas/LFX_5G/duranta-bench-harness/schemas/result.schema.json)).
+- **Standardized Schema**: Validates all benchmark results against a versioned JSON Schema ([`schemas/result.schema.json`](schemas/result.schema.json)).
 - **Physical Simulator Execution**: Runs 5G NR physical simulators (`nr_dlsim`, `nr_ulsim`) with deterministic CPU core pinning (`taskset`), preserves raw stdout/stderr logs, and parses embedded `time_meas` statistics (`PHY proc tx`, `DLSCH encoding time`, `Total PHY proc rx`, `ULSCH decoding time`).
 - **Noise Floor Characterisation**: Executes test cases under both idle and background-loaded conditions on non-pinned cores, calculating median, IQR, min/max, and performance delta.
-- **Probe Overhead Microbenchmark**: Measures the cost in nanoseconds and CPU ticks of the OAI `time_meas` API (`start_meas` / `stop_meas`) versus bare `clock_gettime(CLOCK_MONOTONIC)` and empty loop baselines ([`microbench/meas_overhead.c`](file:///Users/sapnilbiswas/LFX_5G/duranta-bench-harness/microbench/meas_overhead.c)).
-- **Comprehensive Gap Analysis**: Maps the 8 deliverables from the mentorship proposal against actual source paths, line references, and missing components in Duranta ([`docs/GAP_ANALYSIS.md`](file:///Users/sapnilbiswas/LFX_5G/duranta-bench-harness/docs/GAP_ANALYSIS.md)).
+- **Probe Overhead Microbenchmark**: Measures the cost in nanoseconds and CPU ticks of the OAI `time_meas` API (`start_meas` / `stop_meas`) versus bare `clock_gettime(CLOCK_MONOTONIC)` and empty loop baselines, using both single-call invocations and batched iterations (1,000 batches of 1,000 calls) to amortize clock quantization and isolate true probe overhead ([`microbench/meas_overhead.c`](microbench/meas_overhead.c)).
+- **Comprehensive Gap Analysis**: Maps the program's expected outcomes from the mentorship proposal against actual source paths, line references, and missing components in Duranta ([`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md)).
 
 ### What This Harness Does NOT Claim
 - **Not Bare-Metal Determinism**: When executed inside Docker on macOS or virtual machines, timers and CPU scheduling are subject to hypervisor jitter. All outputs are explicitly tagged `"virtualized, not representative of bare metal"`.
 - **Zero Modifications to Duranta**: This harness lives in its own repository and builds against the Duranta clone by path without modifying, branching, or copying Duranta source files (complying with CSSL v1.0).
-- **L2/L3 Instrumentation Status**: This harness does not claim that L2 (RLC, PDCP, SDAP) or L3 (RRC, F1AP, NGAP) are already instrumented. As documented in [`docs/GAP_ANALYSIS.md`](file:///Users/sapnilbiswas/LFX_5G/duranta-bench-harness/docs/GAP_ANALYSIS.md), Layer 2 and Layer 3 currently have zero `time_meas` or `Tracy` probes.
+- **L2/L3 Instrumentation Status**: This harness does not claim that L2 (RLC, PDCP, SDAP) or L3 (RRC, F1AP, NGAP) are already instrumented. As documented in [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md), Layer 2 and Layer 3 currently have zero `time_meas` or `Tracy` probes.
 
 ---
 
@@ -79,7 +79,7 @@ docker run --rm \
 ```
 
 ### Step 3: Run the Probe-Overhead Microbenchmark
-Compile and run the standalone C microbenchmark (1,000,000 iterations):
+Compile and run the standalone C microbenchmark (evaluates both 1,000,000 single iterations and 1,000 batched runs of 1,000 operations to isolate timer resolution and true probe cost):
 ```bash
 docker run --rm \
   -v $(pwd)/../openairinterface5g:/workspace/openairinterface5g:ro \
@@ -99,7 +99,7 @@ docker run --rm \
   bash -c "cmake -S /workspace/openairinterface5g -B /build -GNinja -DENABLE_PHYSIM_TESTS=ON && ninja -C /build nr_dlsim nr_ulsim"
 ```
 
-Execute a DL simulator test case with 5 repetitions, CPU pinning (`taskset -c 0`), and noise floor comparison:
+Execute a DL simulator test case with 30 repetitions, CPU pinning (`taskset -c 0`), and noise floor comparison:
 ```bash
 docker run --rm \
   -v $(pwd)/../openairinterface5g:/workspace/openairinterface5g:ro \
@@ -110,16 +110,18 @@ docker run --rm \
     --bin /build/nr_dlsim \
     --args "-n100 -s20 -S20.2 -e15 -b106 -R106 -P" \
     --cpu 0 \
+    --repetitions 30 \
     --noise-floor \
     --bg-cpus 1-3 \
-    --test-id dl_40mhz_mcs15 \
+    --test-id dl_40mhz_mcs15_30reps \
     --metric phy_proc_tx_us \
     --schema /harness/schemas/result.schema.json \
-    --output /harness/results/dl_40mhz_mcs15.json
+    --output /harness/results/dl_40mhz_mcs15_30reps.json
 ```
 
 ### Step 5: Compute Control-Plane Procedure Latency from PCAPs
 Analyze 3GPP control-plane elementary procedure round-trip latency (F1AP, NGAP, E1AP) from network packet captures (`.pcap` or `.pcapng`) using `tshark`:
+*(Note: Sample PCAP fixtures under `tests/fixtures/`, such as `f1ap_30reps.pcapng`, are scripted test vectors generated to validate transaction pairing and round-trip extraction logic, not live over-the-wire CU/DU network captures).*
 ```bash
 docker run --rm \
   -v $(pwd):/harness \
